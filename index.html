@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="styles.css" />
     <title>PIXL</title>
   </head>
-  <body class="bg-pixl-dark text-pixl-light h-dvh w-full overflow-clip relative">
+  <body
+    class="bg-pixl-dark text-pixl-light h-dvh w-full md:overflow-clip relative flex flex-col md:block"
+  >
     <!-- Background image -->
-    <div class="absolute inset-0 overflow-clip">
+    <div class="fixed inset-0 overflow-clip">
       <img
         src="/images/Official-Login-BG.png"
         alt=""
@@ -17,9 +19,11 @@
       />
     </div>
 
-    <main class="grid place-items-center h-full isolate max-w-[1000px] mx-auto px-8">
-      <div class="flex gap-16 justify-between items-center w-full">
-        <!-- Left panel -->
+    <main
+      class="flex-grow max-md:pt-16 grid place-items-center md:h-full isolate max-w-[1000px] xl:max-w-6xl mx-auto px-8"
+    >
+      <div class="flex flex-col md:flex-row gap-8 md:gap-16 justify-between items-center w-full">
+        <!-- Logo + Word Stack -->
         <div>
           <div class="flex gap-3 items-baseline">
             <svg class="w-36" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 182 61" fill="none">
@@ -57,7 +61,7 @@
               ></path>
               <path fill="#EEE" d="M181.499 50.416h-10.083V60.5h10.083V50.416Z"></path>
             </svg>
-            <div class="uppercase text-4xl text-pixl relative">
+            <div aria-hidden="true" class="hidden md:block uppercase text-4xl text-pixl relative">
               <!-- Top -->
               <div class="absolute opacity-20 flex flex-col gap-2 my-2 bottom-full">
                 <div class="opacity-50 flex flex-col gap-2">
@@ -105,10 +109,12 @@
           </div>
         </div>
 
-        <!-- Right panel -->
-        <div class="w-80 max-w-full pb-16">
-          <h1 class="text-pixl text-3xl">A place for the cool squares.</h1>
-          <div class="flex flex-col gap-3 mt-16 w-68 text-center">
+        <!-- Action Buttons -->
+        <div class="min-[360px]:w-72 sm:w-80 max-w-full pb-16">
+          <h1 class="text-center md:text-left text-pixl text-2xl sm:text-3xl">
+            A place for the cool squares.
+          </h1>
+          <div class="flex flex-col gap-3 mt-8 sm:mt-12 md:mt-16 md:w-68 text-center">
             <a
               class="bg-pixl-dark/50 hover:bg-pixl-dark/60 active:bg-pixl-dark/75 border border-pixl/50 hover:border-pixl/60 active:border-pixl/75 px-4 py-1.5 text-pixl"
               href="#"
@@ -125,7 +131,7 @@
               href="#"
               >Create an Account</a
             >
-            <p class="text-sm mt-20 text-left">Already have an account?</p>
+            <p class="text-sm mt-12 sm:mt-16 md:mt-20 text-left">Already have an account?</p>
             <a
               class="bg-pixl hover:bg-pixl/90 active:bg-pixl/95 border border-transparent px-4 py-1.5 text-pixl-dark"
               href="#"
@@ -136,13 +142,32 @@
       </div>
     </main>
 
-    <footer class="fixed bottom-0 inset-x-0 pb-3">
-      <div class="flex flex-col gap-1.5 items-center text-pixl p-4">
+    <footer class="relative md:fixed md:bottom-0 md:inset-x-0 pb-3">
+      <div class="flex flex-col gap-1.5 items-center text-center text-pixl p-4">
         <p>All Rights Reserved. Pixl Media For Everyone*</p>
         <p class="opacity-50 text-xs">*except for badgers, they’re $&@*holes.</p>
       </div>
       <!-- White noise -->
       <div class="absolute bottom-0 h-4 inset-x-0 bg-[url(/images/white-noise.gif)]"></div>
+      <!-- Pictogram -->
+      <svg
+        class="w-7 absolute right-4 bottom-8 grayscale max-sm:hidden"
+        viewBox="0 0 29 43"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+      >
+        <g fill="#ECA749" opacity=".5" style="mix-blend-mode: luminosity">
+          <path
+            d="M7.058 0H0v7.058h7.058V0Zm0 7.058H0v7.059h7.058V7.058ZM28.234 0h-7.058v7.058h7.058V0Zm0 7.059h-7.058v7.058h7.058V7.059ZM7.058 28.233H0v7.059h7.058v-7.059Z"
+          ></path>
+          <path
+            d="M7.058 35.291H0v7.059h7.058v-7.06Zm21.176-7.058h-7.058v7.059h7.058v-7.059Z"
+          ></path>
+          <path
+            d="M28.234 35.291h-7.058v7.059h7.058v-7.06ZM14.117 21.175H7.059v7.058h7.058v-7.058Zm7.058-7.058h-7.058v7.058h7.058v-7.058Zm-7.058 0H7.059v7.058h7.058v-7.059Zm7.058 7.058h-7.058v7.058h7.058v-7.058Z"
+          ></path>
+        </g>
+      </svg>
     </footer>
   </body>
 </html>
