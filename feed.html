@@ -8,80 +8,111 @@
     <title>PIXL</title>
   </head>
   <body
-    class="bg-pixl-dark text-pixl-light flex h-dvh gap-16 overflow-clip px-4"
+    class="bg-pixl-dark text-pixl-light flex gap-8 px-4 sm:h-dvh sm:overflow-clip xl:gap-16"
   >
     <!-- Navigation -->
-    <header class="my-4 w-40 shrink-0 overflow-y-auto pl-4 xl:ml-40">
-      <a href="/">
-        <svg
-          class="h-8"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 182 61"
-          fill="none"
-        >
-          <path
-            fill="#EEE"
-            d="M10.083 0H0v10.083h10.083V0Zm10.084 0H10.084v10.083h10.083V0Z"
-          ></path>
-          <path
-            fill="#EEE"
-            d="M30.25 0H20.165v10.083h10.083V0ZM10.083 10.083H0v10.084h10.083V10.083Zm30.25 0H30.25v10.084h10.083V10.083Zm-30.25 10.084H0V30.25h10.083V20.167Zm30.25 0H30.25V30.25h10.083V20.167ZM10.083 30.25H0v10.083h10.083V30.25Zm10.084 0H10.084v10.083h10.083V30.25Z"
-          ></path>
-          <path
-            fill="#EEE"
-            d="M30.25 30.25H20.165v10.083h10.083V30.25ZM10.083 40.333H0v10.084h10.083V40.333Zm0 10.084H0V60.5h10.083V50.417ZM60.5 0H50.415v10.083h10.083V0Zm10.083 0H60.5v10.083h10.083V0Zm10.084 0H70.584v10.083h10.083V0ZM70.583 10.083H60.5v10.084h10.083V10.083Zm0 10.084H60.5V30.25h10.083V20.167Zm0 10.083H60.5v10.083h10.083V30.25Zm0 10.083H60.5v10.084h10.083V40.333Zm0 10.084H60.5V60.5h10.083V50.417ZM60.5 50.416H50.415V60.5h10.083V50.416Zm20.167 0H70.584V60.5h10.083V50.416Z"
-          ></path>
-          <path
-            fill="#ECA749"
-            d="M100.833 0H90.75v10.083h10.083V0Zm0 10.083H90.75v10.084h10.083V10.083ZM131.083 0H121v10.083h10.083V0Zm0 10.083H121v10.084h10.083V10.083Zm-30.25 30.25H90.75v10.084h10.083V40.333Zm0 10.084H90.75V60.5h10.083V50.417Zm30.25-10.084H121v10.084h10.083V40.333Zm0 10.084H121V60.5h10.083V50.417ZM110.917 30.25h-10.083v10.083h10.083V30.25Zm10.082-10.084h-10.083V30.25h10.083V20.166Z"
-          ></path>
-          <path
-            fill="#ECA749"
-            d="M110.917 20.166h-10.083V30.25h10.083V20.166Zm10.082 10.084h-10.083v10.083h10.083V30.25Z"
-          ></path>
-          <path
-            fill="#EEE"
-            d="M151.249 0h-10.083v10.083h10.083V0Zm0 10.084h-10.083v10.083h10.083V10.083Z"
-          ></path>
-          <path
-            fill="#EEE"
-            d="M151.249 20.166h-10.083V30.25h10.083V20.166Zm0 10.084h-10.083v10.083h10.083V30.25Zm0 10.084h-10.083v10.083h10.083V40.333Z"
-          ></path>
-          <path
-            fill="#EEE"
-            d="M151.249 50.416h-10.083V60.5h10.083V50.416Zm10.084.001H151.25V60.5h10.083V50.417Zm10.084-.001h-10.083V60.5h10.083V50.416Z"
-          ></path>
-          <path
-            fill="#EEE"
-            d="M181.499 50.416h-10.083V60.5h10.083V50.416Z"
-          ></path>
-        </svg>
-      </a>
-      <nav class="mt-10">
-        <ul class="flex flex-col gap-3.5">
-          <li><a class="hover:underline" href="#">Home</a></li>
-          <li><a class="hover:underline" href="#">Explore</a></li>
-          <!-- Active item -->
-          <li class="-ml-4 flex items-center gap-2">
-            <div class="bg-pixl size-2 shrink-0"></div>
-            <a class="hover:underline" href="#">Notifications</a>
-          </li>
+    <header
+      class="my-4 hidden w-48 shrink-0 flex-col justify-between gap-8 pl-4 sm:flex xl:ml-32"
+    >
+      <div class="overflow-y-auto">
+        <!-- Logo -->
+        <a href="/">
+          <svg
+            class="h-8"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 182 61"
+            fill="none"
+          >
+            <path
+              fill="#EEE"
+              d="M10.083 0H0v10.083h10.083V0Zm10.084 0H10.084v10.083h10.083V0Z"
+            ></path>
+            <path
+              fill="#EEE"
+              d="M30.25 0H20.165v10.083h10.083V0ZM10.083 10.083H0v10.084h10.083V10.083Zm30.25 0H30.25v10.084h10.083V10.083Zm-30.25 10.084H0V30.25h10.083V20.167Zm30.25 0H30.25V30.25h10.083V20.167ZM10.083 30.25H0v10.083h10.083V30.25Zm10.084 0H10.084v10.083h10.083V30.25Z"
+            ></path>
+            <path
+              fill="#EEE"
+              d="M30.25 30.25H20.165v10.083h10.083V30.25ZM10.083 40.333H0v10.084h10.083V40.333Zm0 10.084H0V60.5h10.083V50.417ZM60.5 0H50.415v10.083h10.083V0Zm10.083 0H60.5v10.083h10.083V0Zm10.084 0H70.584v10.083h10.083V0ZM70.583 10.083H60.5v10.084h10.083V10.083Zm0 10.084H60.5V30.25h10.083V20.167Zm0 10.083H60.5v10.083h10.083V30.25Zm0 10.083H60.5v10.084h10.083V40.333Zm0 10.084H60.5V60.5h10.083V50.417ZM60.5 50.416H50.415V60.5h10.083V50.416Zm20.167 0H70.584V60.5h10.083V50.416Z"
+            ></path>
+            <path
+              fill="#ECA749"
+              d="M100.833 0H90.75v10.083h10.083V0Zm0 10.083H90.75v10.084h10.083V10.083ZM131.083 0H121v10.083h10.083V0Zm0 10.083H121v10.084h10.083V10.083Zm-30.25 30.25H90.75v10.084h10.083V40.333Zm0 10.084H90.75V60.5h10.083V50.417Zm30.25-10.084H121v10.084h10.083V40.333Zm0 10.084H121V60.5h10.083V50.417ZM110.917 30.25h-10.083v10.083h10.083V30.25Zm10.082-10.084h-10.083V30.25h10.083V20.166Z"
+            ></path>
+            <path
+              fill="#ECA749"
+              d="M110.917 20.166h-10.083V30.25h10.083V20.166Zm10.082 10.084h-10.083v10.083h10.083V30.25Z"
+            ></path>
+            <path
+              fill="#EEE"
+              d="M151.249 0h-10.083v10.083h10.083V0Zm0 10.084h-10.083v10.083h10.083V10.083Z"
+            ></path>
+            <path
+              fill="#EEE"
+              d="M151.249 20.166h-10.083V30.25h10.083V20.166Zm0 10.084h-10.083v10.083h10.083V30.25Zm0 10.084h-10.083v10.083h10.083V40.333Z"
+            ></path>
+            <path
+              fill="#EEE"
+              d="M151.249 50.416h-10.083V60.5h10.083V50.416Zm10.084.001H151.25V60.5h10.083V50.417Zm10.084-.001h-10.083V60.5h10.083V50.416Z"
+            ></path>
+            <path
+              fill="#EEE"
+              d="M181.499 50.416h-10.083V60.5h10.083V50.416Z"
+            ></path>
+          </svg>
+        </a>
+        <!-- Navigation -->
+        <nav class="mt-10">
+          <ul class="flex flex-col gap-3.5">
+            <li><a class="hover:underline" href="#">Home</a></li>
+            <li><a class="hover:underline" href="#">Explore</a></li>
+            <!-- Active item -->
+            <li class="-ml-4 flex items-center gap-2">
+              <div class="bg-pixl size-2 shrink-0"></div>
+              <a class="hover:underline" href="#">Notifications</a>
+            </li>
 
-          <li><a class="hover:underline" href="#">Lists</a></li>
-          <li><a class="hover:underline" href="#">Bookmarks</a></li>
-          <li><a class="hover:underline" href="#">Jobs</a></li>
-          <li><a class="hover:underline" href="#">Communities</a></li>
-          <li><a class="hover:underline" href="#">Premium</a></li>
-          <li><a class="hover:underline" href="#">Profile</a></li>
-          <li><a class="hover:underline" href="#">More</a></li>
-        </ul>
-      </nav>
+            <li><a class="hover:underline" href="#">Lists</a></li>
+            <li><a class="hover:underline" href="#">Bookmarks</a></li>
+            <li><a class="hover:underline" href="#">Jobs</a></li>
+            <li><a class="hover:underline" href="#">Communities</a></li>
+            <li><a class="hover:underline" href="#">Premium</a></li>
+            <li><a class="hover:underline" href="#">Profile</a></li>
+            <li><a class="hover:underline" href="#">More</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!-- User controls -->
+      <div class="flex h-12 gap-3.5">
+        <a href="/profile" class="shrink-0">
+          <img
+            src="/images/adrian.png"
+            alt="Avatar for Adrian"
+            class="size-11 object-cover"
+          />
+        </a>
+        <div class="flex flex-col gap-1 text-sm">
+          <p>_adrian</p>
+          <p class="text-pixl-light/60">@tudssss</p>
+        </div>
+        <button class="group flex gap-[3px] py-2" aria-label="Post options">
+          <span
+            class="bg-pixl-light/40 group-hover:bg-pixl-light/60 size-1"
+          ></span>
+          <span
+            class="bg-pixl-light/40 group-hover:bg-pixl-light/60 size-1"
+          ></span>
+          <span
+            class="bg-pixl-light/40 group-hover:bg-pixl-light/60 size-1"
+          ></span>
+        </button>
+      </div>
     </header>
 
     <!-- Content -->
-    <main class="flex grow flex-col gap-4 overflow-y-auto px-0.5 py-4">
-      <nav>
-        <ul class="flex justify-end gap-8 text-sm">
+    <main class="-mx-4 flex grow flex-col gap-4 overflow-y-auto px-4 py-4">
+      <nav class="overflow-x-auto [scrollbar-width:none]">
+        <ul class="flex min-w-max justify-end gap-8 text-sm">
           <li><a href="#">For you</a></li>
           <li>
             <a class="text-pixl-light/60 hover:text-pixl-light/80" href="#"
@@ -944,10 +975,19 @@
         </li>
         <!-- More feed items... -->
       </ol>
+
+      <footer class="mt-30 ml-14">
+        <p class="text-center">That's all, folks!</p>
+        <hr class="border-pixl-light/10 my-4" />
+        <!-- White noise -->
+        <div class="h-20 bg-[url(/images/white-noise.gif)]"></div>
+      </footer>
     </main>
 
     <!-- Sidebar -->
-    <aside class="my-4 w-80 shrink-0 overflow-y-auto px-0.5">
+    <aside
+      class="-mx-4 my-4 hidden w-80 shrink-0 overflow-y-auto px-4 lg:block"
+    >
       <input
         type="text"
         placeholder="#Search an idea or pixel"
