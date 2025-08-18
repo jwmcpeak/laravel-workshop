@@ -18,11 +18,11 @@ return new class extends Migration
                 ->cascadeOnDelete();
             $table->foreignId('parent_id')
                 ->nullable()
-                ->constrained()
+                ->constrained('posts')
                 ->cascadeOnDelete();
             $table->foreignId('repost_of_id')
                 ->nullable()
-                ->constrained()
+                ->constrained('posts')
                 ->cascadeOnDelete();
             $table->string('content')
                 ->nullable();
