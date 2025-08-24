@@ -46,4 +46,13 @@ class Post extends Model
             'repost_of_id' => null,
         ]);
     }
+
+    public static function reply(Profile $profile, Post $original, string $content) : self {
+        return static::create([
+            'profile_id'=> $profile->id,
+            'content' => $content,
+            'parent_id' => $original->id,
+            'repost_of_id' => null,
+        ]);
+    }
 }
