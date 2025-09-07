@@ -89,13 +89,13 @@
       <ol class="border-pixl-light/10 border-t pt-4">
         @foreach ($posts as $item)
 
-        <!-- Feed item -->
         <x-post
           :post="$item->isRepost() && $item->content == null ? $item->repostOf : $item"
           :show-enagagement="true"
           :show-replies="true"
         />
-        
+
+        <!-- Feed item -->
         @endforeach
         <!-- More feed items... -->
       </ol>
