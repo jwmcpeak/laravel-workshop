@@ -4,7 +4,7 @@
             aria-hidden="true"
             class="bg-pixl-light/10 absolute top-0 left-5 h-full w-px group-last/li:h-4"
         ></div>
-        <a href="/profile" class="isolate shrink-0">
+        <a href="{{ route('profiles.show', $post->profile) }}" class="isolate shrink-0">
             <img
             src="{{ $post->profile->avatar_url }}"
             alt="Avatar for {{ $post->profile->display_name }}"
@@ -15,13 +15,13 @@
             <div class="flex items-center justify-between gap-4">
             <div class="flex items-center gap-2.5">
                 <p>
-                <a class="hover:underline" href="/profile">{{ $post->profile->display_name }}</a>
+                <a class="hover:underline" href="{{ route('profiles.show', $post->profile) }}">{{ $post->profile->display_name }}</a>
                 </p>
                 <p class="text-pixl-light/40 text-xs">{{ $post->created_at }}</p>
                 <p>
                 <a
                     class="text-pixl-light/40 hover:text-pixl-light/60 text-xs"
-                    href="/profile"
+                    href="{{ route('profiles.show', $post->profile) }}"
                     >{{ $post->profile->handle }}</a
                 >
                 </p>
@@ -44,6 +44,7 @@
             <div class="mt-4 flex flex-col gap-3 text-sm">
             {!! $post->content !!}
             </div>
+            @if ($showEngagement)
             <!-- Action buttons -->
             <div class="mt-6 flex items-center justify-between gap-4">
             <div class="flex items-center gap-8">
@@ -271,5 +272,6 @@
                 </div>
             </div>
             </div>
+            @endif
         </div>
         </li>
