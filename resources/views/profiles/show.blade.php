@@ -33,7 +33,6 @@
         <x-post
           :post="$item->isRepost() && $item->content == null ? $item->repostOf : $item"
           :show-enagagement="true"
-          :show-replies="true"
         />
         
         @endforeach

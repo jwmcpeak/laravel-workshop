@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -88,3 +89,7 @@ str,
 
 Route::get('/{profile:handle}', [ProfileController::class, 'show'])->name('profiles.show');
 Route::get('/{profile:handle}/with_replies', [ProfileController::class, 'replies'])->name('profiles.replies');
+
+Route::scopeBindings()->group(function() {
+    Route::get('/{profile:handle}/status/{post}', [PostController::class, 'show'])->name('posts.show');
+});
