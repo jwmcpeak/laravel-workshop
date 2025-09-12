@@ -2,10 +2,29 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/dev/login', function() {
+    $user = User::inRandomOrder()->first();
+
+    Auth::login($user);
+    request()->session()->regenerate();
+
+    return redirect()->intended(route('profiles.show', $user->profile));
+});
+
+Route::get('/dev/logout', function() {
+    Auth::logout();
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
+
+    return redirect()->intended('/feed');
 });
 
 
