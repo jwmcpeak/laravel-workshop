@@ -65,7 +65,11 @@
             
             <!-- Like -->
             <div class="flex items-center gap-1">
-                <button aria-label="Like" class="hover:text-pixl">
+                <button aria-label="Like" 
+                    @class([
+                        'text-pixl' => $post->has_liked
+                    ])
+                    class="hover:text-pixl">
                     <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -94,7 +98,11 @@
                     </defs>
                     </svg>
                 </button>
-                <span class="text-sm">{{ $post->likes_count }}</span>
+                <span 
+                    @class([
+                        'text-pixl' => $post->has_liked
+                    ])
+                    class="text-sm">{{ $post->likes_count }}</span>
             </div>
             <!-- Comment -->
             <div class="flex items-center gap-1">
@@ -131,7 +139,11 @@
             </div>
             <!-- Re-post -->
             <div class="flex items-center gap-1">
-                <button aria-label="Re-post" class="hover:text-pixl">
+                <button aria-label="Re-post" 
+                    @class([
+                        'text-pixl' => $post->has_reposted
+                    ])
+                    class="hover:text-pixl">
                     <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -204,7 +216,11 @@
                     />
                     </svg>
                 </button>
-                <span class="text-sm">{{ $post->reposts_count }}</span>
+                <span 
+                    @class([
+                        'text-pixl' => $post->has_reposted
+                    ])
+                    class="text-sm">{{ $post->reposts_count }}</span>
             </div>
             
         </div>

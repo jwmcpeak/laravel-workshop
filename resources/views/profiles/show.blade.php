@@ -31,8 +31,8 @@
 
         <!-- Feed item -->
         <x-post
-          :post="$item->isRepost() && $item->content == null ? $item->repostOf : $item"
-          :show-enagagement="true"
+          :post="$item"
+          :show-engagement="true"
         />
         
         @endforeach

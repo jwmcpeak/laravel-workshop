@@ -11,13 +11,15 @@ Route::get('/', function () {
 });
 
 Route::get('/dev/login', function() {
-    $user = User::inRandomOrder()->first();
+    // $user = User::inRandomOrder()->first();
+    $user = User::first('id', 5);
+
 
     Auth::login($user);
     request()->session()->regenerate();
 
     return redirect()->intended(route('profiles.show', $user->profile));
-});
+})->name('login');
 
 Route::get('/dev/logout', function() {
     Auth::logout();
@@ -25,6 +27,10 @@ Route::get('/dev/logout', function() {
     request()->session()->regenerateToken();
 
     return redirect()->intended('/feed');
+});
+
+Route::middleware(['auth'])->group(function() {
+    Route::get('/home', [PostController::class, 'index'])->name('posts.index');
 });
 
 
