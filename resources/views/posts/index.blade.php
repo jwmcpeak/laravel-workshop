@@ -25,18 +25,20 @@
       <div
         class="border-pixl-light/10 mt-8 flex items-start gap-4 border-b pb-4"
       >
-        <a href="/profile" class="shrink-0">
+        <a href="{{ route('profiles.show', $profile) }}" class="shrink-0">
           <img
-            src="/images/adrian.png"
-            alt="Avatar for Adrian"
+            src="{{ $profile->avatar_url }}"
+            alt="Avatar for {{ $profile->display_name }}"
             class="size-10 object-cover"
           />
         </a>
-        @include('partials.post-form', [
-          'labelText' => 'Post body',
-          'fieldName' => 'post',
-          'placeholder' => "What's up _adrian?",
-        ])
+        <x-post-form
+          :label-text="'Post body'"
+          :field-name="'content'"
+          :placeholder="'What\'s up '. $profile->handle . '?'"
+          :action="route('posts.store')"
+        />
+
       </div>
 
       <!-- Feed -->
