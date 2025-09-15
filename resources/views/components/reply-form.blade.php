@@ -1,21 +1,22 @@
 <div
-        class="border-pixl-light/10 mt-8 flex items-start gap-4 border-b pb-4"
-      >
+        class="border-pixl-light/10 bg-pixl-light/[3%] mt-8 flex items-start gap-4 border-t p-4"
+        >
         <a href="{{ route('profiles.show', $profile) }}" class="shrink-0">
-          <img
+            <img
             src="{{ $profile->avatar_url }}"
             alt="Avatar for {{ $profile->display_name }}"
             class="size-10 object-cover"
-          />
+            />
         </a>
-<form class="grow" method="POST" action="{{ route('posts.store') }}">
-    @csrf
-    <label class="sr-only" for="content">Post body</label>
+    <form class="grow" method="POST" action="{{ route('posts.reply', ['profile' => $post->profile, 'post' => $post]) }}">
+        @csrf
+    <label class="sr-only" for="content">Reply body</label>
     <textarea
     class="w-full resize-none text-lg"
     name="content"
     id="content"
-    placeholder="What's up {{ $profile->handle }}?"
+    placeholder="Reply to {{$post->profile->display_name}}'s post"
+    rows="5"
     ></textarea>
     <div class="flex items-center justify-between gap-4">
     <div class="flex gap-4">
@@ -140,4 +141,5 @@
     </button>
     </div>
 </form>
+
 </div>
