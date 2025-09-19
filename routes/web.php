@@ -43,12 +43,21 @@ Route::middleware(['auth'])->group(function() {
         Route::post('/{profile:handle}/status/{post}/quote', 
             [PostController::class, 'quote'])->name('posts.quote');
 
+        Route::post('/{profile:handle}/status/{post}/destroy', 
+            [PostController::class, 'destroy'])->name('posts.destroy');
+
         Route::post('/{profile:handle}/status/{post}/like', 
             [PostController::class, 'like'])->name('posts.like');
+
+        Route::post('/{profile:handle}/status/{post}/unlike', 
+            [PostController::class, 'unlike'])->name('posts.unlike');
     });
 
     Route::post('/{profile:handle}/follow', 
         [ProfileController::class, 'follow'])->name('profiles.follow');
+
+    Route::post('/{profile:handle}/unfollow', 
+        [ProfileController::class, 'unfollow'])->name('profiles.unfollow');
 });
 
 

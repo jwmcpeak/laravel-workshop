@@ -65,4 +65,12 @@ class ProfileController extends Controller
 
         return response()->json(compact('follow'));
     }
+
+    public function unfollow(Profile $profile) {
+        $currentProfile = Auth::user()->profile;
+
+        $success = Follow::removeFollow($currentProfile, $profile);
+
+        return response()->json(compact('success'));
+    }
 }
