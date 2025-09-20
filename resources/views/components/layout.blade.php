@@ -10,8 +10,10 @@
   <body
     class="bg-pixl-dark text-pixl-light flex gap-8 px-4 sm:h-dvh sm:overflow-clip xl:gap-16"
   >
+  <x-navigation />
 
   {{ $slot }}
-
+  
+  <x-aside />
    </body>
 </html>
