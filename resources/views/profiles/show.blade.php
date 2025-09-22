@@ -1,7 +1,7 @@
 <x-layout title="PIXL - Profile">
     <!-- Content -->
     <main class="-mx-4 flex grow flex-col gap-4 overflow-y-auto px-4 py-4">
-      <a href="/feed" class="group flex items-baseline gap-1.5">
+      <a href="{{ route('posts.index') }}" class="group flex items-baseline gap-1.5">
         <svg
           class="size-3"
           xmlns="http://www.w3.org/2000/svg"

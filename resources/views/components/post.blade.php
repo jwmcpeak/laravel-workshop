@@ -11,7 +11,7 @@
         <!-- User meta -->
         <div class="flex items-center justify-between gap-4">
         <div class="flex items-center gap-2.5">
-            <p><a class="hover:underline" href="{{ route('profiles.show', $post->profile) }}}">{{ $post->profile->display_name }}</a></p>
+            <p><a class="hover:underline" href="{{ route('profiles.show', $post->profile) }}">{{ $post->profile->display_name }}</a></p>
             <p class="text-pixl-light/40 text-xs">
                 <a href="{{ route('posts.show', [$post->profile, $post]) }}">{{ $post->created_at }}</a>
             </p>
@@ -80,7 +80,7 @@
         </div>
         @endif
 
-        <x-reply-form :post="$post" />
+        {{-- <x-reply-form :post="$post" /> --}}
 
     </div>
 
